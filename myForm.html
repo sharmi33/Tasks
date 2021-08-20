@@ -15,7 +15,7 @@
             <label for="lastname">Last Name</label>
             &nbsp;<input id="lastname" type="text"></input><br>
             <label for="empId">Employee ID</label>
-            &nbsp;<input id="empId" type="number" required></input><br>
+            &nbsp;<input id="empId" type="text" required></input><br>
             <label for="email-address">Email</label>
             &nbsp;<input id="email-address" type="email"></input><br><br>
             <button type="submit">Submit</button>
@@ -52,34 +52,25 @@
             var lastname = document.getElementById("lastname").value;
             var empId = document.getElementById("empId").value;
             var email = document.getElementById("email-address").value;
-
-            
-            
-            //function myValidation(){
                 var patt=/^[a-zA-Z]+$/;
-                
+                var patt1=/^[0-9]+$/;
                 if (firstname.match(patt)) {
                     document.getElementById("cell1").innerHTML = firstname + " " + lastname;
                 }
                 else{
                     alert('please enter appropriate name');
                 }
-            //}
-            if (empId>0) {
+            if (empId.match(patt1)) {
                 document.getElementById("cell2").innerHTML = empId;
             }
             else {
                 alert('Please enter a valid employee ID');
             }
-            if (empId>0 && firstname.match(patt) ){
+            if (empId.match(patt1) && firstname.match(patt) ){
             alert("Your details are submitted successfully!");
             document.getElementById("cell3").innerHTML = email;
             }
         })
     </script>
-    
-    
 </body>
-
-
 </html>
